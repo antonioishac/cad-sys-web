@@ -1,0 +1,163 @@
+/*------------------------------------*\
+  CORES
+\*------------------------------------*/
+$azul-escuro: #006ca4;
+$azul-claro: #4bc9f3;
+$laranja: #f5957c;
+$roxo: #8b84b6;
+$azul-background: #d4f0fe;
+
+$paleta-azul-escuro: (
+  50: $azul-escuro,
+  100: $azul-escuro,
+  200: $azul-escuro,
+  300: $azul-escuro,
+  400: $azul-escuro,
+  500: $azul-escuro,
+  600: $azul-escuro,
+  700: $azul-escuro,
+  800: $azul-escuro,
+  900: $azul-escuro,
+  A100: $azul-escuro,
+  A200: $azul-escuro,
+  A400: $azul-escuro,
+  A700: $azul-escuro,
+  contrast: (
+    50: $branco,
+    100: $branco,
+    200: $branco,
+    300: $branco,
+    400: $branco,
+    500: $branco,
+    600: $branco,
+    700: $branco,
+    800: $branco,
+    900: $branco,
+    A100: $branco,
+    A200: $branco,
+    A400: $branco,
+    A700: $branco,
+  )
+);
+
+$paleta-azul-claro: (
+  50: $azul-claro,
+  100: $azul-claro,
+  200: $azul-claro,
+  300: $azul-claro,
+  400: $azul-claro,
+  500: $azul-claro,
+  600: $azul-claro,
+  700: $azul-claro,
+  800: $azul-claro,
+  900: $azul-claro,
+  A100: $azul-claro,
+  A200: $azul-claro,
+  A400: $azul-claro,
+  A700: $azul-claro,
+  contrast: (
+    50: $branco,
+    100: $branco,
+    200: $branco,
+    300: $branco,
+    400: $branco,
+    500: $branco,
+    600: $branco,
+    700: $branco,
+    800: $branco,
+    900: $branco,
+    A100: $branco,
+    A200: $branco,
+    A400: $branco,
+    A700: $branco,
+  )
+);
+
+$paleta-laranja: (
+  50: $laranja,
+  100: $laranja,
+  200: $laranja,
+  300: $laranja,
+  400: $laranja,
+  500: $laranja,
+  600: $laranja,
+  700: $laranja,
+  800: $laranja,
+  900: $laranja,
+  A100: $laranja,
+  A200: $laranja,
+  A400: $laranja,
+  A700: $laranja,
+  contrast: (
+    50: $branco,
+    100: $branco,
+    200: $branco,
+    300: $branco,
+    400: $branco,
+    500: $branco,
+    600: $branco,
+    700: $branco,
+    800: $branco,
+    900: $branco,
+    A100: $branco,
+    A200: $branco,
+    A400: $branco,
+    A700: $branco,
+  )
+);
+
+$paleta-roxo: (
+  50: $roxo,
+  100: $roxo,
+  200: $roxo,
+  300: $roxo,
+  400: $roxo,
+  500: $roxo,
+  600: $roxo,
+  700: $roxo,
+  800: $roxo,
+  900: $roxo,
+  A100: $roxo,
+  A200: $roxo,
+  A400: $roxo,
+  A700: $roxo,
+  contrast: (
+    50: $branco,
+    100: $branco,
+    200: $branco,
+    300: $branco,
+    400: $branco,
+    500: $branco,
+    600: $branco,
+    700: $branco,
+    800: $branco,
+    900: $branco,
+    A100: $branco,
+    A200: $branco,
+    A400: $branco,
+    A700: $branco,
+  )
+);
+
+$primary: mat-palette($paleta-azul-escuro, 100, 50, 200);
+$accent: mat-palette($paleta-roxo, 100, 50, 200);
+$warn: mat-palette($paleta-laranja, 100, 50, 200);
+
+$tema: mat-light-theme(
+    $primary,
+    $accent,
+    $warn
+);
+
+$fonte-principal: mat-typography-config(
+  $font-family: '"Pluto", "Calibri", sans-serif',
+  $headline:      mat-typography-level(24px, 24px, 400),
+  $title:         mat-typography-level(20px, 20px, 500),
+  $subheading-2:  mat-typography-level(12px, 12px, 400),
+  $subheading-1:  mat-typography-level(12px, 12px, 400),
+  $body-2:        mat-typography-level(12px, 12px, 500),
+  $body-1:        mat-typography-level(12px, 12px, 400),
+  $caption:       mat-typography-level(12px, 12px, 400),
+  $button:        mat-typography-level(13px, 13px, 500),
+  $input:         mat-typography-level(12.2px, 1, 400)
+);

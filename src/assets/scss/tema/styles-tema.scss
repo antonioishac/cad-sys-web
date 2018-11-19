@@ -1,0 +1,190 @@
+/*------------------------------------*\
+  CUSTOMIZAÇÃO DO TEMA
+\*------------------------------------*/
+body {
+    color: $azul-escuro;
+}
+
+.tema {
+    @include angular-material-theme($tema);
+}
+
+/**
+ * Buttons
+ */
+  .mat-flat-button, 
+  .mat-raised-button,
+  .mat-fab, 
+  .mat-mini-fab {
+     box-shadow: none !important;
+ }
+
+  .mat-flat-button, 
+  .mat-raised-button, 
+  .mat-fab, 
+  .mat-mini-fab {
+    color: $cinza-escuro;
+    background-color: #ececec;
+ }
+ 
+  a {
+    color: #1eabed;
+ }
+
+ /**
+  * Formulários
+  */
+  .mat-select-value {
+     color: $azul-escuro;
+ }
+ 
+  .mat-form-field-appearance-legacy .mat-form-field-label,
+  .mat-focused .mat-form-field-label {
+     color: $azul-escuro;
+ }
+ 
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+     background-color: $azul-escuro;
+ } 
+ 
+  .mat-form-field-ripple {
+     background-color: $azul-escuro;
+ }
+
+  .mat-checkbox-frame,
+  .mat-radio-outer-circle {
+     border-color: $azul-escuro;
+     border-width: 1px;
+ }
+
+ /**
+ * Checkbox do primeng
+ */
+
+  .ui-chkbox,
+  .ui-table .coluna_radiobutton .ui-radiobutton {
+    border: 1px solid $azul-escuro;
+ }
+
+  .ui-chkbox .ui-state-active {
+    background-color: $azul-escuro;
+ }
+
+  .ui-table .coluna_radiobutton .ui-radiobutton .ui-state-active .ui-radiobutton-icon {
+    color: $azul-escuro;
+ }
+
+/**
+ * Divider Material
+ */
+ .mat-divider {
+    margin: 25px 0;
+}
+
+/**
+ * Divider Próprio
+ */
+ .divisoria {
+    display: block;
+    float: left;
+    height: 1px;
+    margin-bottom: 20px;
+    background: #b9b2d4;
+    background: -moz-linear-gradient(left, #b9b2d4 0%, #d4d0e5 60%, #e3e1ee 100%);
+    background: -webkit-linear-gradient(left, #b9b2d4 0%, #d4d0e5 60%, #e3e1ee 100%);
+    background: linear-gradient(to right, #b9b2d4 0%, #d4d0e5 60%, #e3e1ee 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b9b2d4', endColorstr='#e3e1ee',GradientType=1 );
+    margin-left: 10px;
+    margin-top: -1px;
+}
+
+/**
+ * Accordion Material
+ */
+ .mat-expansion-panel-header-title,
+ .mat-expansion-panel {
+    color: $azul-escuro;
+}
+
+ .mat-expansion-panel-header {
+    border-bottom: 1px solid #dddddd;
+}
+
+ .mat-card {
+    background-color:#f8f9f9 !important;
+    padding: 10px 20px 20px 20px;
+}
+
+/**
+ * Highlight do primeng
+ */
+ .ui-state-highlight {
+    background-color: $azul-background;
+}
+
+/**
+ * Sortable column do primeng
+ */
+ .ui-table .ui-sortable-column .ui-sortable-column-icon {
+    color: $azul-escuro;
+}
+
+/**
+ * Table do primeng
+ */
+ .ui-table .ui-paginator-bottom a {
+    color: $azul-escuro;
+}
+
+ .ui-table .ui-paginator-page.ui-state-active {
+    background-color: $azul-background;
+}
+
+/**
+ * Multiselect do primeng
+ */
+  .ui-multiselect-label-container {
+    background-color: azul-escuro;
+}
+
+ .ui-multiselect-panel .ui-multiselect-close {
+    color: $azul-escuro;
+}
+
+/**
+ * Growl do primeng
+ */
+ .ui-growl-item,
+ .ui-growl-item-container  {
+    color: $branco;
+    border-radius:7px;
+}
+
+.ui-growl-message-info .ui-growl-item {
+    background-color: $azul-escuro;
+}
+
+.ui-growl-message-success .ui-growl-item {
+    background-color: $roxo;
+}
+
+.ui-growl-message-error .ui-growl-item {
+    background-color: $vermelho;
+}
+
+.ui-growl-message-warn .ui-growl-item {
+    background-color: $laranja;
+}
+
+/*------------------------------------*\
+  FILEUPLOAD PRIMENG
+\*------------------------------------*/
+ .ui-fileupload .ui-fileupload-choose {
+    background-color: $laranja;
+    color:  $branco;
+}
+
+ .ui-fileupload > .ui-fileupload-buttonbar > button {
+    background-color: $roxo;
+    color: $branco;
+}

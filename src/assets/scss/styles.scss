@@ -1,0 +1,799 @@
+@import "vendor.scss";
+@import "styles-reset";
+@import "styles-font-face";
+@import "styles-variables-generico";
+@import "tema/styles-variables";
+
+@include mat-core($fonte-principal);
+@import "tema/styles-tema.scss";
+
+html, body {
+    font-family: 'Pluto', Calibri, sans-serif;
+    font-style: normal;
+    font-size: 12px;
+}
+
+body {
+    background: #ececec url('../images/background/bg-cinza.png');
+    height: 100vh;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+h1, .h1 {
+    font-size: 2.1rem;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    margin: 0 0 20px 0;
+}
+
+.ui-widget-overlay {
+    background-color: $cinza-escuro;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+}
+
+.ui-dialog-mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+/*------------------------------------*\
+  BLOCO CENTRAL - Espaço para o 
+  conteúdo principal do sistema
+\*------------------------------------*/
+.bloco-central {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    word-wrap: break-word;
+    margin: 15px auto 20px auto;
+    width: 85%;
+    min-height: 80vh;
+    padding: 2em;
+    background-color: $branco;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.bloco-central--resize {
+    width: 77%;
+}
+
+/*------------------------------------*\
+  BLOCO LATERAL - Espaço para 
+  utilidades na lateral
+\*------------------------------------*/
+.bloco-lateral {
+    display: flex;
+    position: -webkit-sticky;
+    position: sticky;
+    float: left;
+    width: 4%;
+    background-color: $branco;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    top: 10px;
+}
+
+.bloco-lateral--aberto {
+    width: 20%;
+}
+
+.bloco-lateral__conteudo {
+    width: 90%;
+    padding: 1.3em;
+    border-right: 1px solid #dddddd;
+}
+
+.bloco-lateral__menu {
+    margin: 0 auto;
+    padding: 1.3em 1em;
+}
+
+.bloco-lateral__menu > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bloco-lateral__menu > ul > li {
+    font-size: 1.7em;
+    color: $cinza-escuro;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.bloco-lateral__menu > ul > li:last-child {
+    margin-bottom: 0;
+}
+
+/*------------------------------------*\
+  SIDEBAR PRIMENG CUSTOMIZAÇÃO
+\*------------------------------------*/
+.sidebar {
+    background-color: $branco;
+    width: 23em;
+    padding: 0;
+}
+
+.sidebar > .ui-sidebar-close {
+    color: #797979;
+    font-size: 1.4em;
+}
+
+/*------------------------------------*\
+  SLIDEMENU PRIMENG CUSTOMIZAÇÃO
+\*------------------------------------*/
+.ui-slidemenu {
+    width: 100%;
+}
+
+.slide-menu a {
+    color: $cinza-escuro;
+}
+
+.slide-menu .ui-slidemenu-content {
+    height: 100% !important;
+}
+
+.slide-menu .ui-menuitem {
+    margin: 1em 0;
+}
+
+.slide-menu span.ui-menuitem-icon {
+    margin-right: 0.7em;
+    font-size: 1.4em;
+    margin-left: 0.7em;
+}
+
+.slide-menu .ui-slidemenu-backward {
+    color: #797979;
+}
+
+/*------------------------------------*\
+  BUTTONS MATERIAL CUSTOMIZAÇÃO
+\*------------------------------------*/
+.mat-raised-button {
+    border-radius: 7px !important;
+}
+
+/*------------------------------------*\
+  FORMS MATERIAL CUSTOMIZAÇÃO
+\*------------------------------------*/
+.mat-input-element {
+    padding-top: 5px;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+.mat-form-field-label {
+    font-size: 0.95em !important;
+}
+
+.mat-select-trigger,
+.mat-input-element {
+    height: 13px;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+    top: 1.6em;
+}
+
+.mat-form-field-label-wrapper {
+    top: -.84375em;
+    padding-top: .84375em;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 6.5px 0;
+    border-top: 12px solid transparent;
+}
+
+.mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.mat-form-field-appearance-legacy.mat-form-field-can-float .mat-form-field-autofill-control:-webkit-autofill + .mat-form-field-label-wrapper .mat-form-field-label {
+    -webkit-transform: none !important;
+    transform: none !important;
+    -ms-transform: none !important;
+    font-size: 11px !important;
+    opacity: 0.8;
+    top: -1px;
+    letter-spacing: 0.2px;
+}
+
+.mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+    -webkit-transform: none !important;
+    transform: none !important;
+    -ms-transform: none !important;
+    font-size: 11px !important;
+    opacity: 0.8;
+    top: -1px;
+    letter-spacing: 0.2px;
+}
+
+.mat-focused .mat-form-field-label {
+    font-weight: 500;
+    opacity: 1 !important;
+}
+
+/**
+ * Checkbox and Radiobox
+ */
+.mat-checkbox, .mat-radio-button {
+    margin-right: 10px;
+}
+
+.mat-checkbox-layout, .mat-radio-label {
+    margin-top: 15px;
+    padding-bottom: 1.25em;
+}
+
+.mat-checkbox-layout .mat-checkbox-label {
+    line-height: inherit;
+}
+
+.mat-checkbox-inner-container,
+.mat-radio-container,
+.mat-radio-outer-circle,
+.mat-radio-inner-circle {
+    width: 15px !important;
+    height: 15px !important;
+}
+
+/**
+ * Datepicker - para ficar menor
+ */
+.mat-datepicker-content .mat-calendar {
+    zoom: 0.85;
+}
+
+.mat-form-field-label {
+    font-size: 1.3em;
+}
+
+.mat-form-field:not(.mat-form-field-should-float) > .mat-form-field-label {
+    font-size: 0.9em;
+}
+
+input.mat-input-element {
+    margin-top: -8px;
+}
+
+/*------------------------------------*\
+  TABELAS - PRIMENG CUSTOMIZAÇÃO
+\*------------------------------------*/
+.ui-treetable-table .ui-treetable-thead > tr > th,
+.ui-table .ui-table-thead > tr > th {
+    font-size: 0.95em;
+    font-weight: 400;
+    text-align: center;
+    padding: .8em .5em !important;
+    border: 1px solid #d7d7d7;
+    background: #f7f7f8;
+}
+
+.ui-treetable-table .ui-treetable-tbody > tr > td,
+.ui-table .ui-table-tbody > tr > td {
+    color: #696969;
+    font-size: 0.95em;
+    border: 1px solid #d7d7d7;
+    padding: .7em .5em;
+}
+
+.ui-table .ui-paginator-bottom {
+    padding-top: 5px;
+}
+
+.ui-table .ui-paginator-page {
+    width: 1.6em;
+    height: 1.6em;
+    line-height: 1.6em;
+}
+
+.ui-table .ui-paginator-page.ui-state-active {
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.ui-table .coluna_checkbox,
+.ui-table .coluna_radiobutton {
+    width: 30px;
+    text-align: center;
+}
+
+.ui-chkbox {
+    margin: 0 auto;
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+}
+
+.ui-chkbox .ui-state-active {
+    height: 13px;
+    color: $branco;
+    border-radius: 0;
+}
+
+.ui-table tr.ui-state-highlight > td {
+    font-weight: 500;
+}
+
+.ui-table .coluna_radiobutton .ui-radiobutton {
+    border-radius: 50%;
+}
+
+/**
+    Campos Inválidos
+*/
+.mat-form-field .mat-form-field-invalid > .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: transparent;
+}
+
+/**
+    Coluna de Ações - Visualizar, Editar e Remover
+*/
+.tabela__coluna-acoes {
+    text-align: center;
+    width: 130px;
+}
+
+.tabela__coluna-acoes a {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.tabela__coluna-acoes--visualizar,
+.tabela__coluna-acoes--editar,
+.tabela__coluna-acoes--remover,
+.tabela__coluna-acoes--responder {
+    display: block;
+    float: left;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.tabela__coluna-acoes--visualizar {
+    background: url('../images/icons/icon_olho--mini.png');
+    background-repeat: no-repeat;
+    width: 28px;
+    height: 15px;
+}
+
+.tabela__coluna-acoes--editar {
+    background: url('../images/icons/icon_lapis--mini.png');
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 17px;
+}
+
+.tabela__coluna-acoes--remover {
+    background: url('../images/icons/icon_lixo--mini.png');
+    background-repeat: no-repeat;
+    width: 23px;
+    height: 20px;
+}
+
+.tabela__coluna-acoes--responder {
+    background: url('../images/icons/icon_balao--mini.png');
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 21px;
+}
+
+/*------------------------------------*\
+  MULTISELECT PRIMENG USADO EM TABELA
+\*------------------------------------*/
+.ui-multiselect-panel {
+    background-color: $branco;
+}
+
+.ui-multiselect-label-container {
+    color: $branco;
+    border-radius: 7px;
+    padding: 5px 0 5px 10px;
+}
+
+.ui-multiselect-header .ui-multiselect-filter-container {
+    margin-left: 10px;
+}
+
+.ui-multiselect .ui-multiselect-trigger {
+    color: $branco;
+    margin-right: 10px;
+}
+
+.ui-multiselect-panel .ui-multiselect-item label {
+    padding-left: 10px;
+}
+
+/*------------------------------------*\
+  MENU INTERNO
+\*------------------------------------*/
+.bloco-central__menu .mat-raised-button {
+    font-size: 1.2em;
+}
+
+.bloco-central__menu--item .mat-menu-item {
+    line-height: 32px;
+    height: 32px;
+}
+
+.bloco-central__menu--item .mat-menu-item-submenu-trigger::after {
+    right: 12px;
+}
+
+.bloco-central__menu .bloco-central__menu--icone {
+    padding-left: 5px;
+}
+
+/**
+ Notificações
+ */
+
+.bloco-central__menu .notificacao--exclamacao {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: $vermelho;
+    border-radius: 50%;
+    margin: 0 7px 0 4px;
+    color: $branco;
+    font-size: 0.8em;
+    line-height: 19px;
+}
+
+.bloco-central__menu--item .mat-badge-medium .mat-badge-content {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+}
+
+.mat-badge-medium.mat-badge-above .mat-badge-content {
+    top: -7px !important;
+}
+
+.bloco-central__menu--item .mat-badge-medium.mat-badge-overlap.mat-badge-after .mat-badge-content {
+    right: -18px;
+}
+
+.bloco-central__menu--item .mat-badge-content {
+    font-size: 11px;
+    background: $vermelho;
+}
+
+/*------------------------------------*\
+  ACCORDION MATERIAL CUSTOMIZAÇÃO
+\*------------------------------------*/
+.mat-expansion-panel {
+    box-shadow: none !important;
+}
+
+.mat-expansion-panel-header {
+    background-color: rgb(248, 249, 249);
+    height: 38px !important;
+}
+
+.mat-expansion-panel-header.mat-expanded,
+.mat-expansion-panel-header.mat-expanded:hover {
+    background-color: rgb(248, 249, 249) !important;
+}
+
+.mat-expansion-panel-header-title {
+    font-weight: bold;
+}
+
+.mat-expansion-panel-body {
+    padding: 10px 24px 0 24px !important;
+}
+
+/*------------------------------------*\
+  FILEUPLOAD PRIMENG
+\*------------------------------------*/
+.ui-fileupload .ui-fileupload-choose {
+    padding: 5px;
+    font-weight: 500;
+    border-radius: 7px;
+    margin-right: 10px;
+}
+
+.ui-fileupload > .ui-fileupload-buttonbar > button {
+    padding: 5px;
+    font-weight: 500;
+    border-radius: 7px;
+    margin-right: 10px;
+    border: none;
+}
+
+.ui-fileupload > .ui-fileupload-buttonbar > button:last-child {
+    background-color: $cinza-claro;
+    color: $cinza-escuro;
+    padding: 5px;
+    font-weight: 500;
+    border-radius: 7px;
+    margin-right: 10px;
+    border: none;
+}
+
+.ui-fileupload .ui-fileupload-row button {
+    background-color: $cinza-claro;
+    color: $cinza-escuro;
+    padding: 5px;
+    font-weight: 500;
+    border-radius: 7px;
+    margin-right: 10px;
+    border: none;
+}
+
+.ui-state-disabled, .ui-widget:disabled {
+    opacity: 0.35;
+    filter: Alpha(Opacity=35);
+    background-image: none;
+    cursor: default !important;
+}
+
+/*------------------------------------*\
+  DIALOG do Primeng
+\*------------------------------------*/
+.ui-dialog {
+    background-color: $branco;
+    border-radius: 7px;
+}
+
+.ui-dialog:not(.ui-dialog-maximized) {
+    max-height: 85vh;
+    overflow: auto;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    font-weight: 500;
+    font-size: 1.2em;
+    padding: .5em 15px .2em 15px;
+    background-color: $cinza-claro;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.ui-dialog .ui-dialog-titlebar-icon {
+    color: $cinza-escuro;
+}
+
+.ui-dialog .ui-dialog-content {
+    padding: 1em 15px .5em 15px;
+}
+
+.ui-dialog-footer {
+    padding: 1em 15px;
+}
+
+.ui-dialog .mat-raised-button {
+    line-height: 28px;
+    padding: 0 12px;
+}
+
+.ui-dialog .ui-dialog-footer .icone {
+    font-size: 0.8em;
+    padding-right: 5px;
+}
+
+.ui-dialog .bloco-central {
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    min-height: auto;
+    width: 100%;
+}
+
+.ui-dialog-full.ui-dialog {
+    width: 100%;
+    height: 100%;
+}
+
+.expandirGrid {
+    text-align: right;
+}
+
+.expandirGrid--icone {
+    font-size: 1.4em;
+}
+
+/*------------------------------------*\
+  LOADING com Spinner Material
+\*------------------------------------*/
+.loading {
+    width: 100%;
+    background-color: $cinza-escuro;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+}
+
+/*------------------------------------*\
+  TOOLBAR  Material
+\*------------------------------------*/
+.mat-toolbar {
+    border-radius: 7px;
+}
+
+.mat-toolbar-multiple-rows,
+.mat-toolbar-row,
+.mat-toolbar-single-row,
+.mat-toolbar-multiple-rows {
+    min-height: 50px !important;
+    height: 50px !important;
+}
+
+.mat-card {
+    box-shadow: none !important;
+    border: 1px solid #f8f9f9;
+    border-radius: 7px;
+    color: inherit !important;
+}
+
+.mat-card-header .mat-card-title {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.mat-card-header .mat-card-header-text {
+    margin: 0;
+}
+
+/*------------------------------------*\
+  UTILITIES - MARGINS
+\*------------------------------------*/
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.widthFull {
+    width: 100%;
+}
+
+/*------------------------------------*\
+  UTILITIES - WIDTHS
+\*------------------------------------*/
+.w100 {
+    width: 100px;
+}
+
+.w150 {
+    width: 150px;
+}
+
+.w200 {
+    width: 200px;
+}
+
+@media (max-width: 575.98px) {
+    .hidden-xs-down {
+        display: none;
+    }
+}
+
+@media (max-width: 40em) {
+    .ui-table-scrollable-body > table > .ui-table-tbody > tr:first-child > td:first-child {
+        border-top: 1px solid #d7d7d7;
+    }
+
+    .ui-table .ui-table-tbody > tr:nth-child(even) {
+        background-color: $cinza-claro;
+    }
+
+    .ui-table-responsive .ui-table-tbody > tr > td .ui-column-title {
+        color: $azul-escuro;
+        font-weight: 400;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .bloco-central {
+        width: 90%;
+    }
+
+    .hidden-sm-down {
+        display: none;
+    }
+
+    .bloco-lateral {
+        position: relative;
+        width: 90%;
+        margin: 0 5% 20px 5%;
+    }
+
+    .bloco-lateral__menu {
+        padding: .7em 0;
+    }
+
+    .bloco-lateral__menu > ul > li {
+        float: left;
+        margin: 0 0 0 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    .hidden-md-up {
+        display: none;
+    }
+
+    .text-right-up-sm {
+        text-align: right;
+    }
+
+    .sidebar .ui-sidebar-close {
+        display: none;
+    }
+}
+
+/*------------------------------------*\
+  UTILITIES - GERAL
+\*------------------------------------*/
+
+.header_row-expansion-custom {
+    border: 1px solid #d7d7d7 !important;
+    background: #f7f7f8 !important;
+    font-size: 0.95em !important;
+    font-weight: 400 !important;
+    text-align: center !important;
+    padding: .8em .5em !important;
+    color: #006ca4 !important;
+}
+
+.tabela__coluna-status {
+    width: 120px;
+    text-align: center;
+}
+
+.tabela__coluna-ordenacao {
+    width: 120px;
+    text-align: center;
+}
+
+.alinhamento-text-ordenacao {
+    margin-top: 20px;
+    margin-left: 19px;
+    position: absolute;
+}
+
+/*------------------------------------*\
+  TABVIEW do PrimeNG
+\*------------------------------------*/
+
+.ui-tabview .ui-tabview-nav {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+
+.ui-tabview .ui-tabview-panel {
+    padding: 1em 0 !important;
+    transition: all 0.5s !important;
+}
+
+.ui-tabview .ui-tabview-nav > li > a {
+    padding: 0 25px 5px 25px !important;
+    color: #949393 !important;
+    font-size: 1.1em !important;
+}
+
+.ui-tabview .ui-tabview-nav > li.ui-tabview-selected {
+    border-bottom: 3px solid #006ca4 !important;
+}
+
+.ui-tabview .ui-tabview-nav > li.ui-tabview-selected > a {
+    color: #696969 !important;
+}

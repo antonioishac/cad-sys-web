@@ -1,0 +1,36 @@
+<div class="bloco-central">
+
+
+  <div class="col-12" style="text-align: left; margin-top: 10px; ">
+    <h2>Cadastro de usuário</h2>
+  </div>
+
+  <form autocomplete="off" class="form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+      <div class="ui-g-12 ui-fluid" style="padding-left: 25px;">
+        <input pInputText type="name" name="name" placeholder="nome"
+        [(ngModel)]="user.name" required #nome_usuario style="width: 50%">
+      </div>
+
+      <div class="ui-g-12 ui-fluid" style="padding-left: 25px;">
+          <input pInputText type="email" name="email" placeholder="email"
+          [(ngModel)]="user.email" required #email_usuario style="width: 50%">
+      </div>
+
+      <div class="ui-g-12 ui-fluid" style="padding-left: 25px;">
+        <input pInputText type="password" name="password" placeholder="Password"
+        [(ngModel)]="user.password" required #password style="width: 50%">
+      </div>
+
+      <div class="ui-g-12">
+        <p-panel>
+          <app-usuario-phone [phones]="user.phones"></app-usuario-phone>
+        </p-panel>
+      </div>
+
+      <div class="ui-g-12">
+        <button pButton type="submit" label="Confirmar" class="btn btn-primary"></button>
+      </div>
+
+  </form>
+</div>

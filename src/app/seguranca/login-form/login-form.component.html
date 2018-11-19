@@ -1,0 +1,24 @@
+<div class="bloco-central">
+
+
+  <div class="col-12" style="text-align: center; margin-top: 100px; ">
+    <h2>Login</h2>
+  </div>
+
+  <form autocomplete="off" class="form" #f="ngForm"
+      style="width: 35%; margin: auto; margin-top: 5%">
+
+      <div class="ui-g-12">
+        <input pInputText type="email" name="login_usuario" placeholder="Login"
+          ngModel required #login_usuario style="width: 100%">
+      </div>
+
+      <div class="ui-g-12">
+        <input pInputText type="password" name="senha" placeholder="Senha"
+          ngModel required #senha style="width: 100%">
+      </div>
+
+    <button style="width: 100%;" type="submit" class="btn btn-primary" [disabled]="!f.valid"
+      (click)="login(login_usuario.value, senha.value); senha.value = '';" >Entrar</button>
+  </form>
+</div>

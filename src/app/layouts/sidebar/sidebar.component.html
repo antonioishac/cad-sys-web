@@ -1,0 +1,94 @@
+<div class="overflow-nav" [ngClass]="{'overflow-nav--open': flagSidenav}">
+    <div class="sidebar__fechar hidden-md-up">
+        <a href="javascript:void(0);" (click)="fecharPanel()">
+            <fa-icon icon="times" class="sidebar__fechar--icone" matTooltip="Fechar"></fa-icon>
+        </a>
+    </div>
+    <div class="sidebar__usuario hidden-md-up">
+        <a href="javascript:void(0);">
+            <fa-icon icon="user-cog" class="sidebar__usuario--config" matTooltip="Configurações"></fa-icon>
+            <span class="sidebar__usuario--nome">Olá,
+                <b>Administrador</b>
+            </span>
+        </a>
+    </div>
+    
+    <!-- MENU -->
+    <nav class="navegacao" [ngClass]="{'navegacao-nivel-dois': flagNivel2, 'navegacao-nivel-tres': flagNivel3}">
+        <div class="overflow-nivel-um">
+            <ul class="overflow-menu">
+                <li class="overflow-menu__link" *ngFor="let item of listaNivel1">
+                    <!-- quando possuir filho -->
+                    <div *ngIf="item.possuiAutorizacao">
+                        <a *ngIf="item.possuiFilho; else blocoNivel1SemFilho" (click)="irNivel2(item.id)">
+                            <fa-icon class="overflow-menu__link--icone" icon="{{item.icone}}"></fa-icon>
+                            <span class="overflow-menu__link--titulo">{{item.label | translate}}</span>
+                            <span *ngIf="item.possuiFilho">
+                                <fa-icon class="overflow-menu__link--ir" icon="angle-right"></fa-icon>
+                            </span>
+                        </a>
+                        <!-- quando não possuir filho -->
+                        <ng-template #blocoNivel1SemFilho>
+                            <a [routerLink]="item.rota" (click)="fecharPanel()">
+                                <fa-icon class="overflow-menu__link--icone" icon="{{item.icone}}"></fa-icon>
+                                <span class="overflow-menu__link--titulo">{{item.label | translate}}</span>
+                            </a>
+                        </ng-template>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="overflow-nivel-dois">
+            <header>
+                <a class="overflow-menu__voltar" (click)="voltarNivel1()">
+                    <fa-icon class="overflow-menu__voltar--seta" icon="angle-left"></fa-icon>
+                    Menu
+                </a>
+            </header>
+            <ul class="overflow-menu">
+                <li class="overflow-menu__link" *ngFor="let item of listaNivel2">
+                    <div *ngIf="idPai === item.idPai && item.possuiAutorizacao">
+                        <!-- quando possuir filho -->
+                        <a *ngIf="item.possuiFilho; else blocoNivel2SemFilho" (click)="irNivel3(item.id, item.label)">
+                            <fa-icon class="overflow-menu__link--icone" icon="{{item.icone}}"></fa-icon>
+                            <span class="overflow-menu__link--titulo">{{item.label | translate}}</span>
+                            <span *ngIf="item.possuiFilho">
+                                <fa-icon class="overflow-menu__link--ir" icon="angle-right"></fa-icon>
+                            </span>
+                        </a>
+                        <!-- quando não possuir filho -->
+                        <ng-template #blocoNivel2SemFilho>
+                            <a [routerLink]="item.rota" (click)="fecharPanel()">
+                                <fa-icon class="overflow-menu__link--icone" icon="{{item.icone}}"></fa-icon>
+                                <span class="overflow-menu__link--titulo">{{item.label | translate}}</span>
+                            </a>
+                        </ng-template>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="overflow-nivel-tres">
+            <header>
+                <a class="overflow-menu__voltar" (click)="voltarNivel1()">
+                    <fa-icon class="overflow-menu__voltar--seta" icon="angle-left"></fa-icon>
+                    Menu
+                </a>
+                <a class="overflow-menu__voltar" (click)="voltarNivel2()">
+                    <fa-icon class="overflow-menu__voltar--seta" icon="angle-left"></fa-icon>
+                    {{nomePaiNivelDois}}
+                </a>
+            </header>
+            <ul class="overflow-menu">
+                <li class="overflow-menu__link" *ngFor="let item of listaNivel3">
+                    <div *ngIf="idPaiNivelDois === item.idPai && item.possuiAutorizacao">
+                        <a [routerLink]="item.rota" (click)="fecharPanel()">
+                            <fa-icon class="overflow-menu__link--icone" icon="{{item.icone}}"></fa-icon>
+                            <span class="overflow-menu__link--titulo">{{item.label | translate}}</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div class="sidebar-overlay" [ngClass]="{'sidebar-overlay-show': flagSidenav}" (click)="flagSidenav = false"></div>

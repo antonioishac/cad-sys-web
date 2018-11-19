@@ -1,0 +1,30 @@
+.go-top-button {
+    position: fixed;
+    cursor: pointer;
+    outline: none;
+    display: none;
+    bottom: 20px;
+    right: 0;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-decoration: none;
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    border-radius: 3px 0 0 3px;
+
+    &.in {
+        display: block;
+    }
+}
+
+.go-top-button:hover, .go-top-button:focus {
+    background-color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+    color: white;
+}
+
+.arrowColor {
+    color: white;
+}

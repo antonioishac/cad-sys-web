@@ -1,0 +1,63 @@
+<div class="ui-g">
+  <div class="ui-g-12">
+    <button pButton label="Novo Telefone" icon="fa fa-plus" type="button"
+      class="ui-button-secondary" (click)="prepararNovoPhone()"></button>
+  </div>
+
+  <div class="ui-g-12">
+    <p-table [value]="phones" [responsive]="true">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>DDD</th>
+          <th>Telefone
+          <th style="width: 150px;"></th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-phone
+        let-rowIndex="rowIndex">
+        <tr>
+          <td>{{ phone.ddd }}</td>
+          <td>{{ phone.phoneNumber }}</td>
+          <td>
+            <button pButton type="button" class="btn btn-primary" (click)="prepararEdicaoPhone(phone, rowIndex)">Editar</button>
+            <button pButton type="button" class="btn btn-primary" (click)="removerPhone(rowIndex)">Excluir</button>
+          </td>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="3">
+            Nenhum telefone cadastrado
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+
+
+<p-dialog [header]="editando ? 'Edição Telefone' : 'Novo Telefone'" [(visible)]="exbindoFormularioPhone"
+  modal="modal" *ngIf="phone">
+  <form #frmPhone="ngForm" (ngSubmit)="confirmarPhone(frmPhone)">
+    <div class="ui-g-12 ui-fluid">
+      
+      <input pInputText type="text" name="ddd" placeholder="DDD"
+        required [(ngModel)]="phone.ddd" #phoneDdd="ngModel"/>
+
+    </div>
+
+    <div class="ui-g-12 ui-fluid">
+        
+        <input pInputText type="text" name="number" placeholder="Telefone"
+          required email [(ngModel)]="phone.phoneNumber" #phoneNumber="ngModel"/>
+
+        <app-message [control]="phoneNumber" error="required" text="Informe o númedo do telefone"></app-message>
+      </div>
+
+      <div class="ui-g-12">
+        <button pButton type="submit" label="Confirmar"></button>
+      </div>
+  </form>
+</p-dialog>
