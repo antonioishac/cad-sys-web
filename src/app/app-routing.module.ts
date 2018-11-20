@@ -20,7 +20,7 @@ export const appRoutes: Routes = [
 
     {
         path: '',
-        component: HomeSegurancaComponent
+        component: LoginFormComponent
     },
 
     {
